@@ -78,9 +78,11 @@ Python is not installed so please try the following command to improve the shell
 script /dev/null -c bash
 
 ```
-I followed the article for the next steps. We can either;
-'
+I followed the article for the next steps. We can either:
+
+
 * Extract admin hashes and crack them (requires significant computing power -- I gave up on this)
+or
 * Add a new admin account  
 
 First, we need to generate a password hash for the admin account:
